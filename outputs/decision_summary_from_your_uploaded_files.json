@@ -1,0 +1,32 @@
+{
+  "files_processed": 4,
+  "total_pair_records": 2729,
+  "acr_count_records": 1114,
+  "cables": [
+    "6680P",
+    "MD2010"
+  ],
+  "decision": "HOLD / DO NOT DECOM YET",
+  "decision_reason": "35 working/active circuit record(s) were found. Validate customer/billing/disconnect before removal.",
+  "status_counts": {
+    "UNK": 768,
+    "SPR": 768,
+    "PCF": 716,
+    "DEF": 298,
+    "CF": 66,
+    "RCF": 50,
+    "WKG": 35,
+    "95DLC": 24,
+    "D1GLC": 4
+  },
+  "status_group_counts": {
+    "Review / assigned": 1628,
+    "Spare": 768,
+    "Defective": 298,
+    "Working / active circuit": 35
+  },
+  "working_active_records": 35,
+  "review_assigned_records": 1628,
+  "defective_records": 298,
+  "spare_records": 768
+}
