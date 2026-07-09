@@ -1,0 +1,434 @@
+{
+  "without_sow": [
+    {
+      "id": "intake",
+      "phase": "1. Intake",
+      "process": "Scope read / 5Ws, WO + SR creation, SharePoint setup",
+      "time_minutes": 28.75,
+      "owner": "Intake Team",
+      "tools": [
+        "InSite",
+        "SharePoint",
+        "Salesforce",
+        "Make",
+        "Oracle"
+      ],
+      "actions": [
+        "Read mail and scope to identify job type",
+        "Create WO and service requests",
+        "Create SharePoint folders",
+        "Upload intake mail, docs, MIC/Field Studio/CSV snips",
+        "Upload documents on InSite",
+        "Send WO creation confirmation mail"
+      ],
+      "automation_tags": [
+        "document_ingestion",
+        "work_order_creation",
+        "sharepoint_setup"
+      ]
+    },
+    {
+      "id": "planning",
+      "phase": "2. Planning",
+      "process": "Status Received \u2192 Planning, ArcGIS + WALDO boundary",
+      "time_minutes": 280,
+      "owner": "Planning Team",
+      "tools": [
+        "InSite",
+        "ArcGIS",
+        "WALDO",
+        "Aramis",
+        "LFACS",
+        "MIC",
+        "PT GUI",
+        "LEIS"
+      ],
+      "actions": [
+        "Update InSite status to Planning",
+        "Verify cables/counts through Aramis, WALDO, LFACS",
+        "Identify CO poles, foreign-owned poles, terminals, equipment",
+        "Create ArcGIS boundary and mark cables/poles/structures",
+        "Mail AT&T / fielding / Opti / BST and review",
+        "Push to AT&T review or design handoff"
+      ],
+      "automation_tags": [
+        "gis_boundary_creation",
+        "cross_system_validation",
+        "email_generation"
+      ]
+    },
+    {
+      "id": "fielding",
+      "phase": "3. Fielding",
+      "process": "Field site visit per 5,000 ft of cable",
+      "time_minutes": 240,
+      "owner": "Fielding Team",
+      "tools": [
+        "Field Studio",
+        "GIS",
+        "Mobile Camera"
+      ],
+      "actions": [
+        "Inspect cable path, poles, terminals, equipment",
+        "Inspect anchors, down guys, and attachments",
+        "Confirm no other utility exists on removal poles",
+        "Document engineering findings"
+      ],
+      "automation_tags": [
+        "mobile_field_capture",
+        "photo_validation",
+        "field_exception_tracking"
+      ]
+    },
+    {
+      "id": "design_handoff",
+      "phase": "4. Design Handoff",
+      "process": "Design handoff after planning approval",
+      "time_minutes": 10,
+      "owner": "Design Coordinator",
+      "tools": [
+        "InSite",
+        "SharePoint",
+        "MIC"
+      ],
+      "actions": [
+        "Update WO for Design and add Job ID",
+        "Upload MIC documents to SharePoint",
+        "Capture MIC snips and handoff emails"
+      ],
+      "automation_tags": [
+        "handoff_package_generation"
+      ]
+    },
+    {
+      "id": "scoping",
+      "phase": "5. Scoping / Pre-Design",
+      "process": "WALDO sketch revision, LFACS + LMU",
+      "time_minutes": 120,
+      "owner": "Scoping Team",
+      "tools": [
+        "InSite",
+        "WALDO",
+        "LFACS",
+        "LMU",
+        "EA Team"
+      ],
+      "actions": [
+        "Move status to Pre-Design",
+        "Verify intake mails and WALDO sketch versus scope",
+        "Request LFACS report and verify active workers",
+        "Revise WALDO sketch for scoped cables/structures",
+        "Run LMUs and route BT errors to EA team"
+      ],
+      "automation_tags": [
+        "scope_validation",
+        "waldo_sketch_revision",
+        "lmu_error_routing"
+      ]
+    },
+    {
+      "id": "additional_fielding",
+      "phase": "6. Additional Fielding",
+      "process": "Triggered only if scoping requires more field data",
+      "time_minutes": null,
+      "owner": "Fielding Team",
+      "tools": [
+        "Field Studio",
+        "GIS"
+      ],
+      "actions": [
+        "Triggered when scoping finds field gaps",
+        "Repeat physical verification",
+        "Update findings for design team"
+      ],
+      "automation_tags": [
+        "exception_workflow"
+      ]
+    },
+    {
+      "id": "design",
+      "phase": "7. Design",
+      "process": "InSite \u2192 Design, Geospace + prints, AOTX tasking",
+      "time_minutes": 900,
+      "owner": "Design Team",
+      "tools": [
+        "InSite",
+        "Geospace",
+        "AOTX",
+        "CTAP",
+        "ORCA",
+        "MIC",
+        "SharePoint"
+      ],
+      "actions": [
+        "Update status, designer, ECD, notes",
+        "Verify all scoping/planning/plat/OPTI/BST docs",
+        "Place cable/terminal/structure in Geospace",
+        "Prepare vicinity/removal prints",
+        "Complete AOTX/CTAP tasking",
+        "Handle BT errors, footage, documentation",
+        "Move to Design QC"
+      ],
+      "automation_tags": [
+        "design_document_checklist",
+        "print_generation",
+        "tasking_automation"
+      ]
+    },
+    {
+      "id": "design_qc",
+      "phase": "8. Design QC",
+      "process": "Design QC, around 20% of design time",
+      "time_minutes": 180,
+      "owner": "QC Team",
+      "tools": [
+        "InSite",
+        "SharePoint",
+        "Design Prints"
+      ],
+      "actions": [
+        "Update status to Design QC",
+        "Verify trail mails, plats, BSTs, OPTIs, scope read, BIC",
+        "Check print counts, labels, FRCs, quantities, GRD symbols",
+        "Verify tasking quantity/type/environment",
+        "Return to Design if corrections needed"
+      ],
+      "automation_tags": [
+        "qc_rule_engine",
+        "print_validation",
+        "correction_routing"
+      ]
+    },
+    {
+      "id": "ocalc",
+      "phase": "9. O-Calc",
+      "process": "Pole loading analysis, target 17 poles/day",
+      "time_minutes": 465,
+      "owner": "O-Calc Team",
+      "tools": [
+        "O-Calc",
+        "GAP",
+        "WALDO",
+        "Aramis",
+        "Excel"
+      ],
+      "actions": [
+        "Prepare O-Calc Excel",
+        "Enter LAT/LONG, pole ID, height/class, tags, lashing",
+        "Check Geo95 grade",
+        "Complete pole design",
+        "Add accessories, line design, images",
+        "Verify copper/fiber via GAP/WALDO/Aramis",
+        "Perform safety check"
+      ],
+      "automation_tags": [
+        "pole_data_extraction",
+        "safety_check_assistant",
+        "ocr_from_prints"
+      ]
+    },
+    {
+      "id": "delivery",
+      "phase": "10. Delivery",
+      "process": "CFAS/ORCA verification and final upload",
+      "time_minutes": 45,
+      "owner": "Delivery Team",
+      "tools": [
+        "CFAS",
+        "ORCA",
+        "Financial Buffer Excel",
+        "SharePoint"
+      ],
+      "actions": [
+        "Verify SOW, prints, FRC",
+        "Update facilities and MODCOD on CFAS",
+        "Update gross amount",
+        "Run ORCA Pricing Report",
+        "Verify through Financial Buffer Excel",
+        "Upload ORCA report to SharePoint"
+      ],
+      "automation_tags": [
+        "pricing_reconciliation",
+        "final_package_validation"
+      ]
+    }
+  ],
+  "with_sow": [
+    {
+      "id": "intake",
+      "phase": "1. Intake",
+      "process": "Scope read, WO + SR creation, SharePoint setup",
+      "time_minutes": 28.75,
+      "owner": "Intake Team",
+      "tools": [
+        "InSite",
+        "SharePoint",
+        "Salesforce",
+        "Make",
+        "Oracle"
+      ],
+      "actions": [
+        "Read mail and scope",
+        "Create WO and service requests",
+        "Create SharePoint folders",
+        "Upload received docs and snips",
+        "Upload documents on InSite",
+        "Send confirmation mail"
+      ],
+      "automation_tags": [
+        "document_ingestion",
+        "work_order_creation",
+        "sharepoint_setup"
+      ]
+    },
+    {
+      "id": "scoping_sow",
+      "phase": "5. Scoping with SOW",
+      "process": "Pre-Design + SOW creation from AT&T SOW",
+      "time_minutes": 120,
+      "owner": "Scoping Team",
+      "tools": [
+        "InSite",
+        "LFACS",
+        "LMU",
+        "AT&T SOW",
+        "EA Team"
+      ],
+      "actions": [
+        "Move status to Pre-Design",
+        "Verify mails and scope of work",
+        "Request LFACS report",
+        "Run LMUs and route BT errors",
+        "Create SOW from FIDs, Pole FIDs, LAT/LONG",
+        "Resolve customer queries",
+        "Update status to Fielding or PDA"
+      ],
+      "automation_tags": [
+        "sow_parser",
+        "fid_extraction",
+        "coordinate_validation"
+      ]
+    },
+    {
+      "id": "fielding_arcmap",
+      "phase": "6. Fielding",
+      "process": "ArcMap-based field visit",
+      "time_minutes": 240,
+      "owner": "Fielding Team",
+      "tools": [
+        "ArcMap",
+        "Field Studio",
+        "GIS"
+      ],
+      "actions": [
+        "Field based on ArcMap notes",
+        "Inspect all ArcMap-marked elements",
+        "Document findings for design team"
+      ],
+      "automation_tags": [
+        "arcmap_note_extraction",
+        "field_capture"
+      ]
+    },
+    {
+      "id": "design",
+      "phase": "7. Design",
+      "process": "InSite \u2192 Design, Geospace FAP/MH, AOTX tasking",
+      "time_minutes": 900,
+      "owner": "Design Team",
+      "tools": [
+        "InSite",
+        "Geospace",
+        "AOTX",
+        "CTAP",
+        "SharePoint"
+      ],
+      "actions": [
+        "Update status/designer/ECD/notes",
+        "Verify scoping, WALDO, ArcGIS, SOW, plats, OPTI/BST",
+        "Use Geospace for FAP/MH and cable/terminal/structure placement",
+        "Prepare prints and tasking",
+        "Complete AOTX/CTAP actions",
+        "Upload docs to SharePoint"
+      ],
+      "automation_tags": [
+        "design_document_checklist",
+        "print_generation",
+        "tasking_automation"
+      ]
+    },
+    {
+      "id": "design_qc",
+      "phase": "8. Design QC",
+      "process": "Design QC, around 20% of design time",
+      "time_minutes": 180,
+      "owner": "QC Team",
+      "tools": [
+        "InSite",
+        "SharePoint",
+        "Design Prints"
+      ],
+      "actions": [
+        "Verify mails, plats, BSTs, OPTIs, scope read, BIC",
+        "Check removal print counts, labels, FRCs, quantity, GRD symbols",
+        "Verify tasking",
+        "Return corrections to Design"
+      ],
+      "automation_tags": [
+        "qc_rule_engine",
+        "print_validation",
+        "correction_routing"
+      ]
+    },
+    {
+      "id": "ocalc",
+      "phase": "9. O-Calc",
+      "process": "Pole loading analysis, target 17 poles/day",
+      "time_minutes": 465,
+      "owner": "O-Calc Team",
+      "tools": [
+        "O-Calc",
+        "GAP",
+        "WALDO",
+        "Aramis",
+        "Excel"
+      ],
+      "actions": [
+        "Prepare O-Calc Excel",
+        "Enter pole and coordinate data",
+        "Check Geo95 grade",
+        "Complete pole design",
+        "Verify copper/fiber and safety"
+      ],
+      "automation_tags": [
+        "pole_data_extraction",
+        "safety_check_assistant",
+        "ocr_from_prints"
+      ]
+    },
+    {
+      "id": "delivery",
+      "phase": "10. Delivery",
+      "process": "CFAS/ORCA verification and final upload",
+      "time_minutes": 45,
+      "owner": "Delivery Team",
+      "tools": [
+        "CFAS",
+        "ORCA",
+        "Financial Buffer Excel",
+        "SharePoint"
+      ],
+      "actions": [
+        "Verify SOW, design prints, FRC",
+        "Update CFAS and ORCA",
+        "Run pricing report",
+        "Verify gross amount",
+        "Upload final report"
+      ],
+      "automation_tags": [
+        "pricing_reconciliation",
+        "final_package_validation"
+      ]
+    }
+  ]
+}
