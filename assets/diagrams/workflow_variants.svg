@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+<title id="title">With-SOW and Without-SOW workflow variants</title><desc id="desc">Side-by-side phase sequences and configured known durations.</desc>
+<defs><style>.title{font:700 29px Arial;fill:#172033}.h{font:700 21px Arial;fill:#1e293b}.box{fill:#fff;stroke:#475569;stroke-width:2;rx:12}.left{fill:#eff6ff;stroke:#1d4ed8;stroke-width:2;rx:12}.right{fill:#f0fdf4;stroke:#15803d;stroke-width:2;rx:12}.txt{font:600 14px Arial;fill:#1f2937;text-anchor:middle}.small{font:400 12px Arial;fill:#475569;text-anchor:middle}.arrow{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#m)}</style><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+<rect width="1400" height="760" fill="#f8fafc"/><text x="700" y="42" class="title" text-anchor="middle">Configured Workflow Variants</text>
+<text x="350" y="85" class="h" text-anchor="middle">Without SOW · 37.81 known hours</text><text x="1050" y="85" class="h" text-anchor="middle">With SOW · 32.98 known hours</text>
+
+<!-- left -->
+<g>
+<rect x="70" y="120" width="170" height="58" class="left"/><text x="155" y="145" class="txt">1 · Intake</text><text x="155" y="164" class="small">28.75 min</text>
+<rect x="270" y="120" width="170" height="58" class="left"/><text x="355" y="145" class="txt">2 · Planning</text><text x="355" y="164" class="small">280 min</text><path d="M240 149 L270 149" class="arrow"/>
+<rect x="470" y="120" width="170" height="58" class="left"/><text x="555" y="145" class="txt">3 · Fielding</text><text x="555" y="164" class="small">240 min</text><path d="M440 149 L470 149" class="arrow"/>
+<rect x="70" y="240" width="170" height="58" class="left"/><text x="155" y="265" class="txt">4 · Handoff</text><text x="155" y="284" class="small">10 min</text><path d="M555 178 C555 210,155 210,155 240" class="arrow"/>
+<rect x="270" y="240" width="170" height="58" class="left"/><text x="355" y="265" class="txt">5 · Scoping</text><text x="355" y="284" class="small">120 min</text><path d="M240 269 L270 269" class="arrow"/>
+<rect x="470" y="240" width="170" height="58" class="left"/><text x="555" y="265" class="txt">6 · Add. Fielding</text><text x="555" y="284" class="small">conditional</text><path d="M440 269 L470 269" class="arrow"/>
+<rect x="70" y="360" width="170" height="58" class="left"/><text x="155" y="385" class="txt">7 · Design</text><text x="155" y="404" class="small">900 min</text><path d="M555 298 C555 330,155 330,155 360" class="arrow"/>
+<rect x="270" y="360" width="170" height="58" class="left"/><text x="355" y="385" class="txt">8 · Design QC</text><text x="355" y="404" class="small">180 min</text><path d="M240 389 L270 389" class="arrow"/>
+<rect x="470" y="360" width="170" height="58" class="left"/><text x="555" y="385" class="txt">9 · O-Calc</text><text x="555" y="404" class="small">465 min</text><path d="M440 389 L470 389" class="arrow"/>
+<rect x="270" y="480" width="170" height="58" class="left"/><text x="355" y="505" class="txt">10 · Delivery</text><text x="355" y="524" class="small">45 min</text><path d="M555 418 C555 452,355 452,355 480" class="arrow"/>
+</g>
+
+<!-- divider --><line x1="700" y1="90" x2="700" y2="650" stroke="#cbd5e1" stroke-width="3"/>
+
+<!-- right -->
+<g>
+<rect x="770" y="120" width="170" height="58" class="right"/><text x="855" y="145" class="txt">1 · Intake</text><text x="855" y="164" class="small">28.75 min</text>
+<rect x="970" y="120" width="170" height="58" class="right"/><text x="1055" y="145" class="txt">5 · Scoping + SOW</text><text x="1055" y="164" class="small">120 min</text><path d="M940 149 L970 149" class="arrow"/>
+<rect x="1170" y="120" width="170" height="58" class="right"/><text x="1255" y="145" class="txt">6 · Fielding</text><text x="1255" y="164" class="small">240 min</text><path d="M1140 149 L1170 149" class="arrow"/>
+<rect x="770" y="260" width="170" height="58" class="right"/><text x="855" y="285" class="txt">7 · Design</text><text x="855" y="304" class="small">900 min</text><path d="M1255 178 C1255 225,855 225,855 260" class="arrow"/>
+<rect x="970" y="260" width="170" height="58" class="right"/><text x="1055" y="285" class="txt">8 · Design QC</text><text x="1055" y="304" class="small">180 min</text><path d="M940 289 L970 289" class="arrow"/>
+<rect x="1170" y="260" width="170" height="58" class="right"/><text x="1255" y="285" class="txt">9 · O-Calc</text><text x="1255" y="304" class="small">465 min</text><path d="M1140 289 L1170 289" class="arrow"/>
+<rect x="970" y="400" width="170" height="58" class="right"/><text x="1055" y="425" class="txt">10 · Delivery</text><text x="1055" y="444" class="small">45 min</text><path d="M1255 318 C1255 365,1055 365,1055 400" class="arrow"/>
+</g>
+
+<rect x="250" y="610" width="900" height="82" class="box"/><text x="700" y="642" class="txt" style="font-size:17px">Interpret with care</text><text x="700" y="668" class="small" style="font-size:14px">The sequences are not directly equivalent; validate queue time, touch time, rework, exceptions, and phase consolidation before claiming savings.</text>
+</svg>

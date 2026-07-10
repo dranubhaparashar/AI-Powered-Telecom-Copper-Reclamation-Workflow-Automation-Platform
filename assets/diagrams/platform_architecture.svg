@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Telecom reclamation platform architecture</title>
+  <desc id="desc">Two complementary paths: PDF document intelligence and workflow dashboard, with a planned integration.</desc>
+  <defs>
+    <style>
+      .title{font:700 30px Arial,sans-serif;fill:#172033}.subtitle{font:400 16px Arial,sans-serif;fill:#4b5563}
+      .box{fill:#fff;stroke:#334155;stroke-width:2;rx:16}.head{fill:#eef2ff;stroke:#4338ca;stroke-width:2;rx:18}
+      .api{fill:#ecfeff;stroke:#0e7490;stroke-width:2;rx:16}.data{fill:#f0fdf4;stroke:#15803d;stroke-width:2;rx:16}
+      .warn{fill:#fff7ed;stroke:#c2410c;stroke-width:2;rx:16}.txt{font:600 17px Arial,sans-serif;fill:#1f2937;text-anchor:middle}
+      .small{font:400 14px Arial,sans-serif;fill:#4b5563;text-anchor:middle}.arrow{stroke:#475569;stroke-width:2.5;fill:none;marker-end:url(#m)}
+      .dash{stroke:#7c3aed;stroke-width:3;stroke-dasharray:10 8;fill:none;marker-end:url(#m2)}
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+    <marker id="m2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/></marker>
+  </defs>
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  <text x="640" y="48" class="title" text-anchor="middle">Telecom Copper Reclamation Platform</text>
+  <text x="640" y="76" class="subtitle" text-anchor="middle">Current architecture and planned integration boundary</text>
+
+  <rect x="50" y="110" width="560" height="535" class="head"/>
+  <text x="330" y="148" class="txt">Document Intelligence</text>
+  <rect x="90" y="185" width="190" height="80" class="box"/><text x="185" y="219" class="txt">ACR / CAPR / CPR</text><text x="185" y="243" class="small">PDF inputs</text>
+  <rect x="340" y="185" width="220" height="80" class="api"/><text x="450" y="219" class="txt">src/parser.py</text><text x="450" y="243" class="small">PyMuPDF + rules</text>
+  <path d="M280 225 L340 225" class="arrow"/>
+  <rect x="90" y="330" width="150" height="82" class="data"/><text x="165" y="363" class="txt">Pair table</text><text x="165" y="387" class="small">status + evidence</text>
+  <rect x="260" y="330" width="150" height="82" class="data"/><text x="335" y="363" class="txt">ACR counts</text><text x="335" y="387" class="small">IN / OUT / qualified</text>
+  <rect x="430" y="330" width="150" height="82" class="warn"/><text x="505" y="363" class="txt">Decision</text><text x="505" y="387" class="small">hold / review / candidate</text>
+  <path d="M450 265 L165 330" class="arrow"/><path d="M450 265 L335 330" class="arrow"/><path d="M450 265 L505 330" class="arrow"/>
+  <rect x="190" y="495" width="280" height="86" class="box"/><text x="330" y="529" class="txt">CSV / XLSX / JSON</text><text x="330" y="553" class="small">reviewable structured outputs</text>
+  <path d="M165 412 L280 495" class="arrow"/><path d="M335 412 L330 495" class="arrow"/><path d="M505 412 L380 495" class="arrow"/>
+
+  <rect x="670" y="110" width="560" height="535" class="head"/>
+  <text x="950" y="148" class="txt">Workflow Dashboard</text>
+  <rect x="720" y="185" width="190" height="80" class="box"/><text x="815" y="219" class="txt">React + Vite</text><text x="815" y="243" class="small">workflow user interface</text>
+  <rect x="990" y="185" width="190" height="80" class="api"/><text x="1085" y="219" class="txt">FastAPI</text><text x="1085" y="243" class="small">workflow + savings API</text>
+  <path d="M910 225 L990 225" class="arrow"/>
+  <rect x="715" y="340" width="205" height="80" class="data"/><text x="817" y="373" class="txt">process_flows.json</text><text x="817" y="397" class="small">With / Without SOW</text>
+  <rect x="970" y="340" width="215" height="80" class="warn"/><text x="1077" y="373" class="txt">opportunities.json</text><text x="1077" y="397" class="small">expected; currently missing</text>
+  <path d="M1085 265 L817 340" class="arrow"/><path d="M1085 265 L1077 340" class="arrow"/>
+  <rect x="820" y="500" width="260" height="82" class="box"/><text x="950" y="533" class="txt">Insights and scenarios</text><text x="950" y="557" class="small">phases, backlog, savings, export</text>
+  <path d="M817 420 L900 500" class="arrow"/><path d="M1077 420 L1000 500" class="arrow"/>
+
+  <path d="M470 540 C620 620, 690 620, 820 540" class="dash"/>
+  <text x="645" y="626" class="small" style="fill:#6d28d9;font-weight:700">Planned parser-to-API integration</text>
+</svg>
