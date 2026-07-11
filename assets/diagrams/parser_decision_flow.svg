@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1280" viewBox="0 0 1600 1280" role="img" aria-labelledby="title desc">
+  <title id="title">ACR, CAPR, and CPR parser decision flow</title>
+  <desc id="desc">A vertical parser workflow. Working evidence leads to hold, review or assigned evidence leads to engineering review, and otherwise the result is a proceed candidate requiring human authorization.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#52637a"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1f2937" flood-opacity="0.10"/>
+    </filter>
+    <style>
+      .title { font: 700 42px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #182235; }
+      .node-title { font: 700 24px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #243247; }
+      .node-sub { font: 400 17px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #56657a; }
+      .decision-title { font: 700 23px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #293548; }
+      .decision-sub { font: 400 15px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #5f6c7c; }
+      .label { font: 700 17px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #46556a; }
+      .outcome-title { font: 700 22px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .outcome-sub { font: 400 15px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4d5b6d; }
+      .flow { fill: none; stroke: #52637a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .box { fill: #ffffff; stroke: #52637a; stroke-width: 3; }
+    </style>
+  </defs>
+
+  <rect x="14" y="14" width="1572" height="1252" rx="30" fill="#f7f9fc" stroke="#e7ebf1" stroke-width="2"/>
+  <text x="800" y="76" text-anchor="middle" class="title">ACR/CAPR/CPR Parser and Decision Flow</text>
+
+  <!-- Processing stages -->
+  <g filter="url(#shadow)">
+    <rect x="520" y="112" width="560" height="88" rx="20" class="box"/>
+    <text x="800" y="149" text-anchor="middle" class="node-title">Upload PDF reports</text>
+    <text x="800" y="177" text-anchor="middle" class="node-sub">approved, redacted, and validated inputs</text>
+  </g>
+  <path d="M800 200 V232" class="flow"/>
+
+  <g filter="url(#shadow)">
+    <rect x="520" y="234" width="560" height="88" rx="20" class="box"/>
+    <text x="800" y="271" text-anchor="middle" class="node-title">Extract text with PyMuPDF</text>
+    <text x="800" y="299" text-anchor="middle" class="node-sub">surface extraction warnings</text>
+  </g>
+  <path d="M800 322 V354" class="flow"/>
+
+  <g filter="url(#shadow)">
+    <rect x="520" y="356" width="560" height="88" rx="20" class="box"/>
+    <text x="800" y="393" text-anchor="middle" class="node-title">Parse metadata, pair rows, and counts</text>
+    <text x="800" y="421" text-anchor="middle" class="node-sub">retain raw values and source evidence</text>
+  </g>
+  <path d="M800 444 V476" class="flow"/>
+
+  <g filter="url(#shadow)">
+    <rect x="520" y="478" width="560" height="88" rx="20" class="box"/>
+    <text x="800" y="515" text-anchor="middle" class="node-title">Normalize status categories</text>
+    <text x="800" y="543" text-anchor="middle" class="node-sub">working · review · defect · spare · unknown</text>
+  </g>
+  <path d="M800 566 V610" class="flow"/>
+
+  <!-- Decision 1 -->
+  <g filter="url(#shadow)">
+    <polygon points="800,610 1000,700 800,790 600,700"
+             fill="#fff4c7" stroke="#d48a00" stroke-width="3"/>
+    <text x="800" y="691" text-anchor="middle" class="decision-title">Any WKG?</text>
+    <text x="800" y="721" text-anchor="middle" class="decision-sub">working circuit evidence</text>
+  </g>
+
+  <!-- YES from decision 1 -->
+  <path d="M600 700 H390 V755" class="flow"/>
+  <text x="500" y="678" text-anchor="middle" class="label">Yes</text>
+
+  <g filter="url(#shadow)">
+    <rect x="100" y="758" width="580" height="118" rx="22" fill="#fff0f0" stroke="#e53535" stroke-width="3"/>
+    <text x="390" y="803" text-anchor="middle" class="outcome-title" fill="#b22222">HOLD / DO NOT DECOM</text>
+    <text x="390" y="836" text-anchor="middle" class="outcome-sub">resolve active evidence before any operational action</text>
+  </g>
+
+  <!-- NO from decision 1 -->
+  <path d="M800 790 V840" class="flow"/>
+  <text x="830" y="822" class="label">No</text>
+
+  <!-- Decision 2 -->
+  <g filter="url(#shadow)">
+    <polygon points="800,842 1025,942 800,1042 575,942"
+             fill="#fff4c7" stroke="#d48a00" stroke-width="3"/>
+    <text x="800" y="932" text-anchor="middle" class="decision-title">Any review/assigned?</text>
+    <text x="800" y="964" text-anchor="middle" class="decision-sub">PCF / RCF / CF / 95DLC / D1GLC / UNK</text>
+  </g>
+
+  <!-- YES from decision 2 -->
+  <path d="M1025 942 H1210 V1000" class="flow"/>
+  <text x="1114" y="920" text-anchor="middle" class="label">Yes</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1020" y="1004" width="500" height="118" rx="22" fill="#fff4e7" stroke="#f05a16" stroke-width="3"/>
+    <text x="1270" y="1049" text-anchor="middle" class="outcome-title" fill="#b94714">ENGINEERING REVIEW</text>
+    <text x="1270" y="1082" text-anchor="middle" class="outcome-sub">validate assignments, uncertainty, and external systems</text>
+  </g>
+
+  <!-- NO from decision 2 -->
+  <path d="M800 1042 V1090" class="flow"/>
+  <text x="830" y="1073" class="label">No</text>
+
+  <g filter="url(#shadow)">
+    <rect x="530" y="1094" width="540" height="118" rx="22" fill="#e8faef" stroke="#24a35a" stroke-width="3"/>
+    <text x="800" y="1139" text-anchor="middle" class="outcome-title" fill="#187b43">PROCEED CANDIDATE</text>
+    <text x="800" y="1172" text-anchor="middle" class="outcome-sub">candidate only — not operational authorization</text>
+  </g>
+</svg>
